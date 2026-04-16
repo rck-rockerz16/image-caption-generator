@@ -1,0 +1,12 @@
+cleanenv/
+venv/
+env/
+__pycache__/
+*.pyc
+models/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.cache/
+.huggingface/
