@@ -8,17 +8,13 @@ from transformers import (
     BlipProcessor, BlipForConditionalGeneration,
     VisionEncoderDecoderModel, ViTImageProcessor, AutoTokenizer
 )
-# -------------------------
 # CONFIG
-# -------------------------
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 BLIP_PATH = "models/blip"
 VIT_PATH = "models/vit_gpt2"
 
-# -------------------------
 # Helper Functions
-# -------------------------
 def is_model_available(path):
     return os.path.exists(path) and len(os.listdir(path)) > 0
 
@@ -118,10 +114,7 @@ def generate_caption(image_path, model_name):
     print(caption)
     print("-" * 50)
 
-
-# -------------------------
 # MAIN
-# -------------------------
 def main():
     parser = argparse.ArgumentParser(description="Image Caption Generator")
     parser.add_argument("--model", choices=["blip", "vit"], help="Choose model")
